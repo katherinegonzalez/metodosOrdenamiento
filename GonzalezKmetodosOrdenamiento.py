@@ -11,6 +11,7 @@
 # ----------------------------------------------------------------------------------------
 # IMPORTAR MODULOS
 from random import randint
+
 # ----------------------------------------------------------------------------------------
 # FUNCIÓN: validarInput
 # ----------------------------------------------------------------------------------------
@@ -40,10 +41,11 @@ def validarInput (mensaje, condicion):
 # ----------------------------------------------------------------------------------------
 # FUNCIÓN: esNumero
 # ----------------------------------------------------------------------------------------
-# Descripción: función auxiliar para validar si el valor recibido es un número
+# Descripción: función auxiliar para validar si el valor recibido es un número y es mayor
+# que 0 y menor o igual que 20
 # ----------------------------------------------------------------------------------------
 # PARÁMETROS & PRE-CONDICIONES
-#       Variables de entrada: (str) número
+#       Variables de entrada: (str) numero
 # ----------------------------------------------------------------------------------------
 # VALOR DE RETORNO & POSTCONDICIONES
 #       PostCondiciones:
@@ -100,8 +102,8 @@ def validarNumeroRandom (lista):
 # Descripción: función para generar una lista con N números aleatorios del 0 al 9 que no se repitan
 # ----------------------------------------------------------------------------------------
 # PARÁMETROS & PRE-CONDICIONES
-#       (list) listaRandom
-#       (int) longitud
+#       Variables de entrada: (int) longitud
+#       variable auxiliar: (list) listaRandom
 # ----------------------------------------------------------------------------------------
 # VALOR DE RETORNO & POSTCONDICIONES
 #       PostCondiciones:

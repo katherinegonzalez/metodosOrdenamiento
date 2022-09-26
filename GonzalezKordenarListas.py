@@ -56,20 +56,20 @@ def condicionInput (opcionIngresada):
 while (opcion != '0'):
     print('\n')
     print('Programa Ordenar Elementos de una Lista generada aleatoriamente.')
-    longitudLista = longitudIngresada('Ingrese la longitud de la lista que desea ordenar: ')
-    print('Ahora seleccione método de ordenamiento: ')
+    print('Seleccione método de ordenamiento: ')
     print('1. Burbuja')
     print('2. Selección')
     print('3. Inserción')
     print('0. Salir')
     opcion = validarInput('Ingrese opción: ', condicionInput)
+    if ( opcion != '0' ):
+        longitudLista = longitudIngresada('Ahora ingrese la longitud de la lista que desea ordenar (de 1 a 20): ')
 
     print('\n')
     if (opcion == '1'):
         burbuja(longitudLista)
     elif (opcion == '2'):
-        print('yaa')
-        # seleccion()
+        seleccion(longitudLista)
     elif (opcion == '3'):
         print('yaa')
         # insercion()

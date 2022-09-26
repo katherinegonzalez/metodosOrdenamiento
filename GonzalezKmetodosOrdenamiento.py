@@ -52,7 +52,7 @@ def validarInput (mensaje, condicion):
 #       Valor de retorno: bool (True o False)
 # ----------------------------------------------------------------------------------------
 def esNumero(numero):
-    return numero.isdigit()
+    return numero.isdigit() and int(numero) > 0 and int(numero) <= 20
 
 # ----------------------------------------------------------------------------------------
 # FUNCIÓN: longitudIngresada
@@ -91,7 +91,7 @@ def longitudIngresada(mensaje):
 def validarNumeroRandom (lista):
     seguirgenerandoNum = True
     while seguirgenerandoNum:
-        numero = randint(0, 9)
+        numero = randint(0, 19)
         if numero not in lista:
             seguirgenerandoNum = False
     return numero
@@ -137,13 +137,39 @@ def burbuja(longitudLista):
     sigueDesordenado = True
     while sigueDesordenado:
         sigueDesordenado = False
-        for i in range(len(lista) - 1):
+        for i in range(longitudLista - 1):
             if (lista [i] > lista [i + 1]):
                 elementoAnterior = lista[i]
                 lista[i] = lista[i+1]
                 lista[i+1] = elementoAnterior
                 sigueDesordenado = True
 
+    print('Lista Ordenada: ', lista)
+
+# ----------------------------------------------------------------------------------------
+# FUNCIÓN: seleccion
+# ----------------------------------------------------------------------------------------
+# Descripción: función que ordena una lista aleatoria con el método Selección
+# ----------------------------------------------------------------------------------------
+# PARÁMETROS & PRE-CONDICIONES
+#       Variables de entrada: (int) longitusLista
+# ----------------------------------------------------------------------------------------
+# VALOR DE RETORNO & POSTCONDICIONES
+#       PostCondiciones:
+#           Se imprime la lista ordenada
+# ----------------------------------------------------------------------------------------
+def seleccion (longitudLista):
+    print('Método Selección: \n')
+    lista = listaAleatoria(longitudLista)
+    print('Lista Desordenada: ', lista)
+    for i in range (longitudLista):
+        posicionValorMinimo = i
+        for j in range(i+1, longitudLista):
+            if (lista[posicionValorMinimo] > lista[j]):
+                posicionValorMinimo = j
+        elementoAnterior = lista[i]
+        lista[i] = lista[posicionValorMinimo]
+        lista[posicionValorMinimo] = elementoAnterior
     print('Lista Ordenada: ', lista)
 
 

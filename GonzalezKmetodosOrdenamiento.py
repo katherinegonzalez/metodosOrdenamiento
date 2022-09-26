@@ -35,7 +35,6 @@ def validarInput (mensaje, condicion):
             seguirPreguntando = False
         else:
             print('El valor ingresado no es válido')
-    print('opcionIngresada: ', opcionIngresada)
     return opcionIngresada
 
 # ----------------------------------------------------------------------------------------
@@ -68,7 +67,6 @@ def esNumero(numero):
 # ----------------------------------------------------------------------------------------
 def longitudIngresada(mensaje):
     numero = validarInput(mensaje, esNumero)
-    print('numero: ', numero)
     return int(numero)
 
 # ----------------------------------------------------------------------------------------
@@ -111,7 +109,6 @@ def validarNumeroRandom (lista):
 #       Valor de retorno: (lista) listaRandom
 # ----------------------------------------------------------------------------------------
 def listaAleatoria(longitud):
-    print('longitud: ', longitud)
     listaRandom = []
     for i in range(longitud):
         num = validarNumeroRandom(listaRandom)
@@ -172,6 +169,32 @@ def seleccion (longitudLista):
         lista[posicionValorMinimo] = elementoAnterior
     print('Lista Ordenada: ', lista)
 
+
+# ----------------------------------------------------------------------------------------
+# FUNCIÓN: insercion
+# ----------------------------------------------------------------------------------------
+# Descripción: función que ordena una lista aleatoria con el método Inserción
+# ----------------------------------------------------------------------------------------
+# PARÁMETROS & PRE-CONDICIONES
+#       Variables de entrada: (int) longitusLista
+# ----------------------------------------------------------------------------------------
+# VALOR DE RETORNO & POSTCONDICIONES
+#       PostCondiciones:
+#           Se imprime la lista ordenada
+# ----------------------------------------------------------------------------------------
+def insercion (longitudLista):
+    print('Método Inserción: \n')
+    lista = listaAleatoria(longitudLista)
+    print('Lista Desordenada: ', lista)
+    for i in range(1, longitudLista):
+        elementoActual = lista[i]
+        indice = i
+
+        while ( indice > 0 and lista[indice - 1] > elementoActual):
+            lista[indice] = lista [indice - 1]
+            indice = indice - 1
+        lista[indice] = elementoActual
+    print('Lista Ordenada: ', lista)
 
 # ----------------------------------------------------------------------------------------
 # end.

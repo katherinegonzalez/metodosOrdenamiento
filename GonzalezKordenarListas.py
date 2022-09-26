@@ -71,8 +71,7 @@ while (opcion != '0'):
     elif (opcion == '2'):
         seleccion(longitudLista)
     elif (opcion == '3'):
-        print('yaa')
-        # insercion()
+        insercion(longitudLista)
 
 # ----------------------------------------------------------------------------------------
 # end.
